@@ -9,7 +9,7 @@ export const ROLES = {
     bg: 'bg-helix-600/20',
     border: 'border-helix-600/30',
     dot: 'bg-helix-400',
-    pages: ['dashboard', 'notifications', 'quotations', 'placement', 'policies', 'claims', 'clients', 'reports', 'openmarket', 'settings'],
+    pages: ['dashboard', 'notifications', 'quotations', 'placement', 'policies', 'claims', 'clients', 'reports', 'openmarket', 'premium', 'settings'],
     permissions: {
       canBindPolicy: true,
       canIssueQuote: true,
@@ -30,7 +30,7 @@ export const ROLES = {
     bg: 'bg-emerald-600/20',
     border: 'border-emerald-600/30',
     dot: 'bg-emerald-400',
-    pages: ['dashboard', 'reinsurance', 'placement', 'policies', 'notifications', 'reports', 'openmarket'],
+    pages: ['dashboard', 'reinsurance', 'placement', 'policies', 'notifications', 'reports', 'openmarket', 'premium'],
     permissions: {
       canBindPolicy: false,
       canIssueQuote: false,
@@ -51,7 +51,7 @@ export const ROLES = {
     bg: 'bg-amber-600/20',
     border: 'border-amber-600/30',
     dot: 'bg-amber-400',
-    pages: ['dashboard', 'notifications', 'quotations', 'placement', 'policies', 'reinsurance', 'claims', 'clients', 'reports', 'openmarket'],
+    pages: ['dashboard', 'notifications', 'quotations', 'placement', 'policies', 'reinsurance', 'claims', 'clients', 'reports', 'openmarket', 'premium'],
     permissions: {
       canBindPolicy: false,
       canIssueQuote: true,

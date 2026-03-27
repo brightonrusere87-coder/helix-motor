@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import {
   LayoutDashboard, FileText, Car, Shield, BarChart3,
   Settings, Bell, Users, FileStack, ChevronRight,
-  Zap, Activity, LogOut, ChevronDown, Lock, Globe
+  Zap, Activity, LogOut, ChevronDown, Lock, Globe, DollarSign
 } from 'lucide-react'
 import { useAuth, ROLES } from '../context/AuthContext.jsx'
 
@@ -14,6 +14,7 @@ const ALL_NAV = [
   { id: 'policies',      label: 'Policies',           icon: FileStack,       badge: null },
   { id: 'reinsurance',   label: 'Reinsurance',        icon: Activity,        badge: '2'  },
   { id: 'openmarket',    label: 'Open Market',        icon: Globe,           badge: 'NEW'},
+  { id: 'premium',       label: 'Premium Ledger',     icon: DollarSign,      badge: null },
   { id: 'claims',        label: 'Claims',             icon: Car,             badge: '5'  },
   { id: 'clients',       label: 'Clients',            icon: Users,           badge: null },
   { id: 'reports',       label: 'Reports',            icon: BarChart3,       badge: null },

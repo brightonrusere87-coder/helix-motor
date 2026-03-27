@@ -1,17 +1,19 @@
-import React, { useState } from 'react'
+import React, { useState, lazy, Suspense } from 'react'
 import { AuthProvider, useAuth } from './context/AuthContext.jsx'
 import Sidebar from './components/Sidebar.jsx'
 import LoginPage from './pages/LoginPage.jsx'
-import Dashboard from './pages/Dashboard.jsx'
-import Quotations from './pages/Quotations.jsx'
-import Reinsurance from './pages/Reinsurance.jsx'
-import Claims from './pages/Claims.jsx'
-import Policies from './pages/Policies.jsx'
-import Notifications from './pages/Notifications.jsx'
-import Placement from './pages/Placement.jsx'
-import Reports from './pages/Reports.jsx'
-import Placeholder from './pages/Placeholder.jsx'
-import OpenMarket from './pages/OpenMarket.jsx'
+
+const Dashboard = lazy(() => import('./pages/Dashboard.jsx'))
+const Quotations = lazy(() => import('./pages/Quotations.jsx'))
+const Reinsurance = lazy(() => import('./pages/Reinsurance.jsx'))
+const Claims = lazy(() => import('./pages/Claims.jsx'))
+const Policies = lazy(() => import('./pages/Policies.jsx'))
+const Notifications = lazy(() => import('./pages/Notifications.jsx'))
+const Placement = lazy(() => import('./pages/Placement.jsx'))
+const Reports = lazy(() => import('./pages/Reports.jsx'))
+const Placeholder = lazy(() => import('./pages/Placeholder.jsx'))
+const OpenMarket = lazy(() => import('./pages/OpenMarket.jsx'))
+const Clients = lazy(() => import('./pages/Clients.jsx'))
 
 const ALL_PAGES = {
   dashboard:     <Dashboard />,
@@ -21,8 +23,8 @@ const ALL_PAGES = {
   policies:      <Policies />,
   reinsurance:   <Reinsurance />,
   claims:        <Claims />,
+  clients:       <Clients />,
   reports:       <Reports />,
-  clients:       <Placeholder title="Client Management" />,
   settings:      <Placeholder title="System Configuration" />,
   openmarket:    <OpenMarket />,
 }
@@ -37,7 +39,9 @@ function AuthenticatedApp() {
     <div className="flex min-h-screen">
       <Sidebar activeTab={safeTab} setActiveTab={setActiveTab} />
       <main className="flex-1 ml-64 p-8 min-h-screen">
-        {ALL_PAGES[safeTab]}
+        <Suspense fallback={<div className="text-white">Loading module…</div>}>
+          {ALL_PAGES[safeTab]}
+        </Suspense>
       </main>
     </div>
   )
